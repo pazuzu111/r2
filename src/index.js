@@ -16,6 +16,7 @@ ReactDOM.render(
         <Router>
             <Switch>
                 <Route exact path="/" component={App} />
+                <Route path="/:id" component={SinglePhoto} />
             </Switch>
         </Router>
     </Provider>,
