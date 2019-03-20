@@ -5,12 +5,8 @@ import { GET_PHOTOS, receivePhotos } from '../actions/actions'
 function* fetchPhotos() {
     try {
         const data = yield call(fetchData);
-        console.log(data)
         if(data) {         
-            yield put({
-                type: 'RECEIVE_PHOTOS',
-                data: data
-            });
+            yield put(receivePhotos(data))
         }
     } catch (e) {
         // TODO

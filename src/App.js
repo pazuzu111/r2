@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { getPhotos } from './actions/actions'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import Photos from './components/Photos'
 import './App.css';
 
 class App extends Component {
@@ -12,9 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-        hello
-        </header>
+          <Photos photos={this.props.photos} loading={this.props.loading} />
       </div>
     );
   }
