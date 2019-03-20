@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-export const fetchData = async (limit = 10) => {
-    let res = await axios.get(`https://jsonplaceholder.typicode.com/photos?_limit=${limit}`)
+export const fetchData = async (page) => {
+    let res = await axios.get(`https://jsonplaceholder.typicode.com/photos?_limit=10&_page=${page}`)
     return res.data
 }
 

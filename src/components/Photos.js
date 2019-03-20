@@ -5,7 +5,7 @@ const Photos = props =>  {
     <div>
         <div className="photo-container">
         {
-            props.loading === false? 
+            props.loading === false || undefined? 
             (
                 props.photos.map(photo => {
                 return (

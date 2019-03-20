@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import App from './App';
+import SinglePhoto from './components/SinglePhoto';
+
 import * as serviceWorker from './serviceWorker';
 import './index.css';
 

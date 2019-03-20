@@ -8,18 +8,19 @@ import './App.css';
 class App extends Component {
   
   componentDidMount () {
-    this.props.actions.getPhotos()
+    this.props.actions.getPhotos(3)
   }
   render() {
     return (
       <div className="App">
+      <button onClick={() => this.props.actions.getPhotos(this.props.page)}> next </button>
           <Photos photos={this.props.photos} loading={this.props.loading} />
       </div>
     );
   }
 }
 const mapStateToProps = state => {
-  return { photos: state.photos, loading: state.loading };
+  return { photos: state.photos, loading: state.loading, page: state.page };
 };
 
 const mapDispatchToProps = dispatch => {

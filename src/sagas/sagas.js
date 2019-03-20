@@ -2,9 +2,9 @@ import {call, put, takeLatest} from "redux-saga/effects";
 import { fetchData } from "../services/fetchService";
 import { GET_PHOTOS, receivePhotos } from '../actions/actions'
 
-function* fetchPhotos() {
+function* fetchPhotos(action) {
     try {
-        const data = yield call(fetchData);
+        const data = yield call(() => fetchData(action.page));
         if(data) {         
             yield put(receivePhotos(data))
         }

@@ -1,7 +1,8 @@
 
 export const GET_PHOTOS = 'GET_PHOTOS'
-export const getPhotos = () => ({
+export const getPhotos = (page) => ({
     type: 'GET_PHOTOS',
+    page: page
 })
 
 export const RECEIVE_PHOTOS = "RECEIVE_PHOTOS"
