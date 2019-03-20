@@ -18,7 +18,7 @@ function* fetchPhotos() {
     }
 }
 
-export default function* saga() {
+export default function* mySaga() {
     yield takeLatest(GET_PHOTOS, fetchPhotos)
 }
 
