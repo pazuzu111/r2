@@ -13,9 +13,8 @@ export default (state = initialState, action) => {
 
         case RECEIVE_PHOTOS:
         let data = action.photos
-        console.log('receive', data)
         return { ...state, photos: data, loading: false }
-        
+
         default: return state
     }
 }

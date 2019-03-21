@@ -1,5 +1,6 @@
 import React from 'react';
-import photo, { Photo } from './Photo'
+import Photo  from './Photo'
+
 const Photos = props =>  {
     return(
     <div>

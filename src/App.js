@@ -8,12 +8,12 @@ import './App.css';
 class App extends Component {
   
   componentDidMount () {
-    this.props.actions.getPhotos(3)
+    this.props.actions.getPhotos(1)
   }
   render() {
     return (
       <div className="App">
-      <button onClick={() => this.props.actions.getPhotos(this.props.page)}> next </button>
+            <button onClick={() => this.props.actions.getPhotos(this.props.page)}> next </button>
           <Photos photos={this.props.photos} loading={this.props.loading} />
       </div>
     );
