@@ -8,14 +8,14 @@ import './App.css';
 class App extends Component {
   
   componentDidMount () {
-    this.props.actions.getPhotos(1)
+    this.props.actions.getPhotos(0)
   }
 
   render() {
     return (
       <div className="App">
-{          this.props.page === 1? null : <button onClick={() => this.props.actions.prevPhotos()}> prev </button>
-}          <button onClick={() => this.props.actions.getPhotos()}> next </button>
+{          this.props.page === 1? null : <button onClick={() => this.props.actions.prevPhotos(this.props.page)}> prev </button>
+}          <button onClick={() => this.props.actions.getPhotos(this.props.page)}> next </button>
           <Photos photos={this.props.photos} loading={this.props.loading} />
       </div>
     );
