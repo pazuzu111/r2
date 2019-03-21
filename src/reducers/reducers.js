@@ -1,25 +1,27 @@
-import { GET_PHOTOS, RECEIVE_PHOTOS } from '../actions/actions'
-
+import { GET_PHOTOS, RECEIVE_PHOTOS, GET_PREV_PHOTOS } from '../actions/actions'
 
 const initialState = {
     photos: [],
-    page: 1
+    page: 0
 }
-
 
 export default (state = initialState, action) => {
     switch (action.type) {
         case GET_PHOTOS:
-        if(action.prevOrNext === 'next') {
-            return { ...state, page: state.page+1, loading: true }
-        }
-        else if(action.prevOrNext === 'prev' && state.page !== 0) {
-            return { ...state, page: state.page-1, loading: true }
-        }
+        console.log(action.page)
+        console.log(state.type)
+
+        return { ...state, page: state.page+1, loading: true }
 
         case RECEIVE_PHOTOS:
         let data = action.photos
+        console.log('received',data)
         return { ...state, photos: data, loading: false }
+
+        case GET_PREV_PHOTOS:
+        console.log(action.type)
+
+        return { ...state, page: state.page-1, loading: true }
 
         default: return state
     }

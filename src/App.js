@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getPhotos } from './actions/actions'
+import { getPhotos, prevPhotos } from './actions/actions'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import Photos from './components/Photos'
@@ -8,13 +8,15 @@ import './App.css';
 class App extends Component {
   
   componentDidMount () {
-    this.props.actions.getPhotos(1, 'next')
+    this.props.actions.getPhotos(1)
+    console.log(this.props.actions)
+    setInterval(() => {console.log(this.props.page)}, 2000)
   }
   render() {
     return (
       <div className="App">
-          <button onClick={() => this.props.actions.getPhotos(this.props.page, 'prev')}> prev </button>
-          <button onClick={() => this.props.actions.getPhotos(this.props.page, 'next')}> next </button>
+{          this.props.page === 1? null : <button onClick={() => this.props.actions.prevPhotos(this.props.page)}> prev </button>
+}          <button onClick={() => this.props.actions.getPhotos(this.props.page)}> next </button>
           <Photos photos={this.props.photos} loading={this.props.loading} />
       </div>
     );
@@ -26,7 +28,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    actions: bindActionCreators({ getPhotos }, dispatch)
+    actions: bindActionCreators({ getPhotos, prevPhotos }, dispatch)
   }
 }
 

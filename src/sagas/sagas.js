@@ -1,7 +1,6 @@
-import {call, put, takeLatest} from "redux-saga/effects";
+import {call, put, takeLatest, takeEvery, all} from "redux-saga/effects";
 import { fetchData } from "../services/fetchService";
-import { GET_PHOTOS, receivePhotos } from '../actions/actions'
-
+import { GET_PHOTOS, receivePhotos, GET_PREV_PHOTOS } from '../actions/actions'
 
 export function* fetchPhotos(action) {
     try {
@@ -15,6 +14,7 @@ export function* fetchPhotos(action) {
 
 //watcher
 export function* mySaga() {
+    yield takeLatest(GET_PREV_PHOTOS, fetchPhotos)
     yield takeLatest(GET_PHOTOS, fetchPhotos)
 }
 
