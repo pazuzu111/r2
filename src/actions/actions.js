@@ -1,8 +1,9 @@
 
 export const GET_PHOTOS = 'GET_PHOTOS'
-export const getPhotos = (page) => ({
+export const getPhotos = (page, prevOrNext) => ({
     type: 'GET_PHOTOS',
-    page: page
+    page: page,
+    prevOrNext: prevOrNext
 })
 
 export const RECEIVE_PHOTOS = "RECEIVE_PHOTOS"

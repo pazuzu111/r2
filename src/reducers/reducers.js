@@ -6,10 +6,16 @@ const initialState = {
     page: 1
 }
 
+
 export default (state = initialState, action) => {
     switch (action.type) {
         case GET_PHOTOS:
-        return { ...state, page: state.page+1, loading: true }
+        if(action.prevOrNext === 'next') {
+            return { ...state, page: state.page+1, loading: true }
+        }
+        else if(action.prevOrNext === 'prev' && state.page !== 0) {
+            return { ...state, page: state.page-1, loading: true }
+        }
 
         case RECEIVE_PHOTOS:
         let data = action.photos

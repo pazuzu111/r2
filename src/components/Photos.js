@@ -3,7 +3,6 @@ import Photo  from './Photo'
 
 const Photos = props =>  {
     return(
-    <div>
         <div className="photo-container">
         {
             props.loading === false || undefined? 
@@ -25,7 +24,6 @@ const Photos = props =>  {
             )
         }
         </div>
-    </div>
     )
 }
   
