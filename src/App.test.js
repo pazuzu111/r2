@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reducers from './reducers/reducers'
 import {fetchPhotos, mySaga} from './sagas/sagas'
-import { GET_PHOTOS, RECEIVE_PHOTOS, receivePhotos} from './actions/actions';
+import { GET_PHOTOS, RECEIVE_PHOTOS, GET_PREV_PHOTOS, receivePhotos} from './actions/actions';
 import { fetchData } from './services/fetchService';
 import {call, put, takeLatest} from "redux-saga/effects";
 import sagaHelper from 'redux-saga-testing'
@@ -86,20 +86,27 @@ describe('fetch reducer', () => {
   it('has a default state', () => {
     expect(reducers(undefined, {}))
     .toEqual({
-      "page": 1, 
-      "photos": [] 
+      page: 0, 
+      photos: [] 
     })
   })
   
   it('handles GET_CARDS request', () => {
     expect(reducers(undefined, {
       type:   GET_PHOTOS,
-      payload: {
-        page: 2
-      }
     })).toEqual({
       loading: true,
-      page: 2,
+      page: 1,
+      photos: []
+    })
+  })
+
+  it('handles GET_PREV_PHOTOS request', () => {
+    expect(reducers(undefined, {
+      type:   GET_PREV_PHOTOS,
+    })).toEqual({
+      loading: true,
+      page: -1,
       photos: []
     })
   })
@@ -114,6 +121,7 @@ describe('fetch reducer', () => {
     })
   })
 })
+
 describe('test sagas', () => {
   const it = sagaHelper(fetchPhotos(1));
   console.log(it)

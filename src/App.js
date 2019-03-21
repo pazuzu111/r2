@@ -9,14 +9,13 @@ class App extends Component {
   
   componentDidMount () {
     this.props.actions.getPhotos(1)
-    console.log(this.props.actions)
-    setInterval(() => {console.log(this.props.page)}, 2000)
   }
+
   render() {
     return (
       <div className="App">
-{          this.props.page === 1? null : <button onClick={() => this.props.actions.prevPhotos(this.props.page)}> prev </button>
-}          <button onClick={() => this.props.actions.getPhotos(this.props.page)}> next </button>
+{          this.props.page === 1? null : <button onClick={() => this.props.actions.prevPhotos()}> prev </button>
+}          <button onClick={() => this.props.actions.getPhotos()}> next </button>
           <Photos photos={this.props.photos} loading={this.props.loading} />
       </div>
     );
