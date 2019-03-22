@@ -7,6 +7,7 @@ import { GET_PHOTOS, RECEIVE_PHOTOS, GET_PREV_PHOTOS, receivePhotos} from './act
 import { fetchData } from './services/fetchService';
 import {call, put, takeLatest} from "redux-saga/effects";
 import sagaHelper from 'redux-saga-testing'
+
 const api = jest.fn();
 
 const photos = [
