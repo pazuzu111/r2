@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Photo = props =>  {
     return (
-        <Link to={{ pathname: `/${props.photo.id}`, state: { data: props.photo }}} >
-            <img src={props.photo.thumbnailUrl} className="photoInfo" alt="foto"/>
+        <div>
+           <img src={props.photo.thumbnailUrl} className="photoInfo" alt="foto"/>
             <h3 className="photoInfo">Title: {props.photo.title}</h3>
             <h4 className="photoInfo">Album ID: {props.photo.albumId}</h4>
-        </Link>
+        </div>
     )
 }
   

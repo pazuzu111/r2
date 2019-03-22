@@ -199,13 +199,6 @@ background: linear-gradient(to bottom, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, 
   display: flex;
 }
 
-@media screen and (max-width: 480px) {
-  .buttonContainer {
-    margin-top: 30vh;
-  }
-}
-
-
 button {
   border: none;
   outline: none;
@@ -225,17 +218,15 @@ button:hover {
   cursor: pointer;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 780px) {
   button {
     padding: 4.5%;
-    margin-top: 2%;
     margin-bottom: 2%;
   }
 
-  button:hover {
-      padding: 6%;
+  .buttonContainer {
+    margin-top: 20vh;
   }
-
 }
 
 

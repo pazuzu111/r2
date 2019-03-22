@@ -12,7 +12,7 @@ const Photos = props =>  {
 					props.photos.map(photo => {
 						return (
 							<div className="photo" key={photo.id}>
-								<Link to={{ pathname: `/${props.id}`, state: { data: photo }}} >
+								<Link to={{ pathname: `/${photo.id}`, state: { data: photo }}} >
 									<Photo photo={photo} />
 									</Link>
 
@@ -27,7 +27,7 @@ const Photos = props =>  {
 				: 
 				(
 					<div className="loader">
-						<i class="fas fa-spinner fa-4x"></i>
+						<i className="fas fa-spinner fa-4x"></i>
 						<h2 className="photoInfo">Loading...</h2>
 					</div>
 				)

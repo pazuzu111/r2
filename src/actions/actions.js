@@ -10,7 +10,6 @@ export const receivePhotos = data => ({
 	photos: data
 })
 
-
 export const GET_PREV_PHOTOS = 'GET_PREV_PHOTOS'
 export const prevPhotos = (page) => ({
 	type: 'GET_PREV_PHOTOS',

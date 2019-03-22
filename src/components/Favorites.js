@@ -12,7 +12,7 @@ const Favorites = props => {
 			<div className="container">
 				<div className="photos">
 					{
-						f?
+						f&&
 						f.map(photo => {
 							return ( 
 								<div className="photo">
@@ -21,8 +21,6 @@ const Favorites = props => {
 								</div>
 							)
 						})
-						:
-						<p>no favorites</p>
 					}
 				</div>
 			</div>
