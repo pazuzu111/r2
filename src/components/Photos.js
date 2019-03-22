@@ -13,7 +13,6 @@ const Photos = props =>  {
                     return (
                         <div className="photo" key={photo.id}>
                             <Link to={{ pathname: `/${props.id}`, state: { data: photo }}} >
-
                                 <Photo photo={photo} />
                                 </Link>
 

@@ -11,7 +11,6 @@ const Favorites = props => {
         <div>
             <Navbar />
             <div className="container">
-
                 <div className="photos">
                     {
                         f?

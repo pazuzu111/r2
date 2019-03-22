@@ -112,6 +112,21 @@ li {
   border: unset;
 }
 
+.singlePhoto {
+  margin-top: 19%;
+  transition: .5s;
+  background: lightskyblue;
+  margin: 0% auto;
+  height: 100vh;
+  /* border: .2px solid grey; */
+}
+
+.singlePhoto img {
+  height: 65vh;
+  margin-top: 5%;
+
+}
+
 .fa-heart {
   cursor: pointer;
   display: flex;
