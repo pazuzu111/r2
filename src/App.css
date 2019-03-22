@@ -4,7 +4,12 @@
 .App {
   text-align: center;
 }
+body {
+  background: #ad5389;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #3c1053, #ad5389);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+}
 nav {
   z-index: 999;
   background: rgb(58, 13, 77);
@@ -74,6 +79,10 @@ li {
   margin: 0 auto;
   margin-top: 10%;
   box-shadow: 0px 10px 35px -10px rgba(0,0,0,0.75);
+  background: #ad5389;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #3c1053, #ad5389);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 
@@ -91,10 +100,12 @@ li {
     margin-top: 19%;
     -webkit-transition: .5s;
     transition: .5s;
-    border-radius: 1%;
+    border-radius: .5%;
     width: 95%;
     margin: 7% auto;
     border: .2px solid grey;
+    background: antiquewhite;
+
 }
 
 .photoInfo {
@@ -108,7 +119,7 @@ li {
   -webkit-box-shadow: 0px 10px 35px -10px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 10px 35px -10px rgba(0,0,0,0.75);
   box-shadow: 0px 10px 35px -10px rgba(0,0,0,0.75);
-  background-color: rgb(240, 235, 229);
+  transform: scale(1.07);
   border: unset;
 }
 
