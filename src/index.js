@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import App from './App';
 import SinglePhoto from './components/SinglePhoto';
 import Favorites from './components/Favorites';
+import Navbar from './components/Navbar';
 import * as serviceWorker from './serviceWorker';
 import './index.css';
 

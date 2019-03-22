@@ -31,8 +31,7 @@ class App extends Component {
     
     return(
      <div className="container">
-        <Navbar />
-  
+        <Navbar />  
         <Photos photos={this.props.photos} loading={this.props.loading} />
       </div>
     );
