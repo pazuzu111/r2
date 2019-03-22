@@ -112,13 +112,6 @@ background: linear-gradient(to bottom, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, 
 
 }
 
-@media screen and (max-width: 480px) {
-  .photos {
-      padding-top: 10px;
-  }
-}
-
-
 .photo {
     margin-top: 19%;
     -webkit-transition: .5s;
@@ -129,22 +122,6 @@ background: linear-gradient(to bottom, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, 
     border: .2px solid grey;
     background:rgba(255,255,255, 0.3);
 
-}
-
-@media screen and (max-width: 480px) {
-  .photo {
-      margin: -2%;
-      margin-top: 11%;
-      transition: 2s;
-  }
-
-  .photo:hover {
-    transition: .5s;
-    transform: scale(1);
-    -webkit-box-shadow: 0px 10px 35px -10px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 10px 35px -10px rgba(0,0,0,0.75);
-    box-shadow: 0px 10px 35px -10px rgba(0,0,0,0.75);
-  }
 }
 
 .photoInfo {
@@ -221,13 +198,57 @@ button:hover {
 @media screen and (max-width: 780px) {
   button {
     padding: 4.5%;
-    margin-bottom: 2%;
+  }
+
+  .photo {
+    transition: 2s;
+    width: 100vw;
   }
 
   .buttonContainer {
     margin-top: 20vh;
   }
+
+  .singlePhoto {
+    height: 100vh;
+  }
+  
+  .singlePhoto img {
+    height: 45vh;
+    margin-top: 9vh;
+  }
+  
+}
+
+@media screen and (max-width: 480px) {
+  button {
+    padding: 4.5%;
+  }
+
+  .container {
+    width: 100vw
+  }
+
+  .photo {
+    transition: 2s;
+    width: 100vw;
+  }
+
+  .buttonContainer {
+    margin-top: 7vh;
+  }
+
+  .singlePhoto {
+    height: 100vh;
+  }
+  
+  .singlePhoto img {
+    height: 45vh;
+    margin-top: 9vh;
+  }
+  
 }
 
 
 
+margin-top: 8.2vh;
