@@ -25,13 +25,19 @@ class App extends Component {
   render() {
     const prevButton = this.props.page === 1? 
                           null : 
-                          <button onClick={() => this.props.actions.prevPhotos(this.props.page)}> prev </button>   
+                          <button className="button" onClick={() => this.props.actions.prevPhotos(this.props.page)}> prev </button>   
     
-    const nextButton = <button onClick={() => this.props.actions.getPhotos(this.props.page)}> next </button>
+    const nextButton = <button className="button" onClick={() => this.props.actions.getPhotos(this.props.page)}> next </button>
     
     return(
      <div className="container">
-        <Navbar />  
+        <Navbar />
+        
+        <div className="buttonContainer">
+          {prevButton}
+          {nextButton}  
+        </div>
+
         <Photos photos={this.props.photos} loading={this.props.loading} />
       </div>
     );
