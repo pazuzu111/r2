@@ -1,6 +1,7 @@
 import React from 'react';
 import Photo  from './Photo'
 import LikeButton from './LikeButton';
+import logo from '../logo.svg'
 import { Link } from 'react-router-dom';
 
 const Photos = props =>  {
@@ -27,8 +28,8 @@ const Photos = props =>  {
                 : 
                 (
                     <div className="loader">
-                        {/* <img src={loader} alt="loader"/> */}
-                        loading....
+                        <i class="fas fa-spinner fa-4x"></i>
+                        <h2 className="photoInfo">Loading...</h2>
                     </div>
                 )
             }

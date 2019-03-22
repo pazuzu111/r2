@@ -4,8 +4,9 @@
 .App {
   text-align: center;
 }
-body {
-  
+.loader {
+  width: 100vw;
+  text-align: center;
 }
 
 h1 {
@@ -165,6 +166,11 @@ background: linear-gradient(to bottom, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, 
   color:red;
   transition: .5s;
 }
+
+.fa-spinner {
+  color: white;
+}
+
 
 button {
   border: none;
