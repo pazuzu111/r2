@@ -12,7 +12,7 @@ export default class LikeButton extends Component {
 
     componentDidMount() {
         let fav = localStorage.getItem(`${this.props.title}`)
-        if(fav == null){fav = false}
+        if(fav == null) {fav = false}
 
         this.setState({ liked: JSON.parse(fav) })
     }
@@ -28,12 +28,13 @@ export default class LikeButton extends Component {
 
     //onClick save item to favorites
     like = (data) => {
+        this.toggleLike()
         let retrievedObject = localStorage.getItem("favorites");
         console.log('retrievedObject',retrievedObject)
         let stored = JSON.parse(retrievedObject);
         stored.push(data)
-        this.toggleLike()
         localStorage.setItem('favorites', JSON.stringify(stored))
+        console.log('storage',localStorage.getItem("favorites"))
     }
 
     //onClick remove item from favorites

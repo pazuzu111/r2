@@ -10,9 +10,15 @@ class App extends Component {
   
   componentDidMount () {
     this.props.actions.getPhotos(0)
-    this.getFavs = JSON.parse(localStorage.getItem("favorites"))
-    console.log('favs',this.getFavs)
-  }
+    let arr = []
+    let getFavs = localStorage.getItem("favorites")
+    
+    if(getFavs === null) {
+      localStorage.setItem('favorites', JSON.stringify(arr))  
+      getFavs = localStorage.getItem("favorites")
+    }
+    console.log('favs:', getFavs)
+  }  
 
   render() {
     const prevButton = this.props.page === 1? 
@@ -24,7 +30,7 @@ class App extends Component {
     return(
      <div className="App">
         <header>
-          <Link to={{ pathname: `/favorites`, state: { data: this.getFavs }}}>
+          <Link to="/favorites">
             Favorites
           </Link>
           {prevButton}
