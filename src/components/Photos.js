@@ -4,27 +4,27 @@ import LikeButton from './LikeButton';
 
 const Photos = props =>  {
     return(
-        <div className="photo-container">
-        {
-            props.loading === false || undefined? 
-            (
-                props.photos.map(photo => {
-                return (
-                    <div className="photo" key={photo.id}>
-                        <Photo photo={photo} />
-                        <LikeButton info={photo} id={photo.id} title={photo.title} />
+        <div className="photos">
+            {
+                props.loading === false || undefined? 
+                (
+                    props.photos.map(photo => {
+                    return (
+                        <div className="photo" key={photo.id}>
+                            <Photo photo={photo} />
+                            <LikeButton info={photo} id={photo.id} title={photo.title} />
+                        </div>
+                    )
+                    })
+                ) 
+                : 
+                (
+                    <div className="loader">
+                        {/* <img src={loader} alt="loader"/> */}
+                        loading....
                     </div>
                 )
-                })
-            ) 
-            : 
-            (
-                <div className="loader">
-                    {/* <img src={loader} alt="loader"/> */}
-                    loading....
-                </div>
-            )
-        }
+            }
         </div>
     )
 }

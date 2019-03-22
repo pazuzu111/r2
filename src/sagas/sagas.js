@@ -1,4 +1,4 @@
-import {call, put, takeLatest, takeEvery, all} from "redux-saga/effects";
+import {call, put, takeLatest} from "redux-saga/effects";
 import { fetchData } from "../services/fetchService";
 import { GET_PHOTOS, receivePhotos, GET_PREV_PHOTOS } from '../actions/actions'
 

@@ -3,6 +3,8 @@ import { getPhotos, prevPhotos } from './actions/actions'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import Photos from './components/Photos'
+import Navbar from './components/Navbar'
+
 import { Link } from 'react-router-dom';
 import './App.css';
 
@@ -28,14 +30,8 @@ class App extends Component {
     const nextButton = <button onClick={() => this.props.actions.getPhotos(this.props.page)}> next </button>
     
     return(
-     <div className="App">
-        <header>
-          <Link to="/favorites">
-            Favorites
-          </Link>
-          {prevButton}
-          {nextButton}
-        </header>
+     <div className="container">
+        <Navbar />
   
         <Photos photos={this.props.photos} loading={this.props.loading} />
       </div>

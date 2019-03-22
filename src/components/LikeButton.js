@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Favorites from './Favorites';
-import { store } from '../store/store';
 
 export default class LikeButton extends Component {
     constructor(props) {
