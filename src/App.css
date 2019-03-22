@@ -120,14 +120,15 @@ background: linear-gradient(to bottom, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, 
     width: 95%;
     margin: 7% auto;
     border: .2px solid grey;
-    background: antiquewhite;
+    background:rgba(255,255,255, 0.3);
 
-}
+  }
 
 .photoInfo {
   text-decoration: none;
-  color: #222;
   padding: 20px;
+  color: white;
+
 }
 
 .photo:hover {
@@ -188,6 +189,7 @@ button:hover {
   transition: .5s;
   background-color: white;
   color: #c2a661;
+  cursor: pointer;
 }
 
 .buttonContainer {

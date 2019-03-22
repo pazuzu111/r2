@@ -2,7 +2,6 @@ import React from 'react';
 import LikeButton from './LikeButton'
 import Photo  from './Photo'
 import Navbar  from './Navbar'
-import { Link } from 'react-router-dom';
 
 const Favorites = props => {
     let f = JSON.parse(localStorage.getItem('favorites'))

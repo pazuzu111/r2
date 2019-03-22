@@ -28,11 +28,10 @@ export default class LikeButton extends Component {
     like = (data) => {
         this.toggleLike()
         let retrievedObject = localStorage.getItem("favorites");
-        console.log('retrievedObject',retrievedObject)
         let stored = JSON.parse(retrievedObject);
+        
         stored.push(data)
         localStorage.setItem('favorites', JSON.stringify(stored))
-        console.log('storage',localStorage.getItem("favorites"))
     }
 
     //onClick remove item from favorites
@@ -40,6 +39,7 @@ export default class LikeButton extends Component {
         let retrievedObject = localStorage.getItem("favorites");
         let stored = JSON.parse(retrievedObject);
         let newArray = stored.filter(x => x.id !== id)
+        
         localStorage.setItem('favorites', JSON.stringify(newArray))  
         this.toggleLike()
     }
@@ -53,9 +53,13 @@ export default class LikeButton extends Component {
     }
 
     render () {
+        let css = {
+            heart: this.state.liked ? "fa fa-heart fa-2x" : "far fa-heart fa-2x"
+        }
+
         return (
             <i
-               className={this.state.liked ? "fa fa-heart fa-2x" : "far fa-heart fa-2x"}
+               className={css.heart}
                onClick={e => this.methodHandle(this.props)}>
             </i>
         )

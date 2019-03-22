@@ -122,9 +122,8 @@ describe('fetch reducer', () => {
   })
 })
 
-describe('test sagas', () => {
+describe('fetch sagas', () => {
   const it = sagaHelper(fetchPhotos(1));
-  console.log(it)
   
   it('should have called the mock API first', result => {
     let expected = call(api)

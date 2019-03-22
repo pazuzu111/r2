@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import Photos from './components/Photos'
 import Navbar from './components/Navbar'
-import { Link } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -18,7 +17,6 @@ class App extends Component {
       localStorage.setItem('favorites', JSON.stringify(arr))  
       getFavs = localStorage.getItem("favorites")
     }
-    console.log('favs:', getFavs)
   }  
 
   render() {
