@@ -12,7 +12,9 @@ const Photos = props =>  {
                     return (
                         <div className="photo" key={photo.id}>
                             <Photo photo={photo} />
-                            <LikeButton info={photo} id={photo.id} title={photo.title} />
+                            <div>
+                                <LikeButton info={photo} id={photo.id} title={photo.title} />
+                            </div>
                         </div>
                     )
                     })
