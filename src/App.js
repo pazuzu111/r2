@@ -1,38 +1,40 @@
-import React, { Component } from 'react';
-import { getPhotos, prevPhotos } from './actions/actions'
+import React, { Component } from "react";
+import { getPhotos, prevPhotos } from "./actions/actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import Photos from './components/Photos'
-import Navbar from './components/Navbar'
-import './App.css';
+import Photos from "./components/Photos";
+import Navbar from "./components/Navbar";
+import Button from "./components/Button";
+import "./App.css";
 
 class App extends Component {
-  
-  componentDidMount () {
-    this.props.actions.getPhotos(0)
-    let arr = []
-    let getFavs = localStorage.getItem("favorites")
-    
-    if(getFavs === null) {
-      localStorage.setItem('favorites', JSON.stringify(arr))  
-      getFavs = localStorage.getItem("favorites")
+  componentDidMount() {
+    this.props.actions.getPhotos(0);
+    let arr = [];
+    let getFavs = localStorage.getItem("favorites");
+
+    if (getFavs === null) {
+      localStorage.setItem("favorites", JSON.stringify(arr));
+      getFavs = localStorage.getItem("favorites");
     }
-  }  
+  }
 
   render() {
-    const prevButton = this.props.page === 1? 
-                          null : 
-                          <button className="button" onClick={() => this.props.actions.prevPhotos(this.props.page)}> prev </button>   
-    
-    const nextButton = <button className="button" onClick={() => this.props.actions.getPhotos(this.props.page)}> next </button>
-    
-    return(
-     <div className="container">
+    return (
+      <div className="container">
         <Navbar />
-        
+
         <div className="buttonContainer">
-          {prevButton}
-          {nextButton}  
+          <Button
+            button={"prev"}
+            prevPhotos={this.props.actions.prevPhotos}
+            page={this.props.page}
+          />
+          <Button
+            button={"next"}
+            nextPhotos={this.props.actions.getPhotos}
+            page={this.props.page}
+          />
         </div>
 
         <Photos photos={this.props.photos} loading={this.props.loading} />
@@ -40,6 +42,7 @@ class App extends Component {
     );
   }
 }
+
 const mapStateToProps = state => {
   return { photos: state.photos, loading: state.loading, page: state.page };
 };
@@ -47,7 +50,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     actions: bindActionCreators({ getPhotos, prevPhotos }, dispatch)
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
