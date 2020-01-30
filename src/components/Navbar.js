@@ -7,13 +7,11 @@ const Navbar = () => {
       <ul>
         <li>
           <Link id="logo" to="/">
-            {" "}
-            Home{" "}
+            Home
           </Link>
         </li>
         <li>
           <Link id="favs" to="/favorites">
-            {" "}
             <i className="fa fa-heart"></i>
           </Link>
         </li>

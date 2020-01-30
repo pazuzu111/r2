@@ -13,6 +13,7 @@ class App extends Component {
     let arr = [];
     let getFavs = localStorage.getItem("favorites");
 
+    //check local storage for saved items
     if (getFavs === null) {
       localStorage.setItem("favorites", JSON.stringify(arr));
       getFavs = localStorage.getItem("favorites");

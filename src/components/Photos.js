@@ -24,7 +24,7 @@ const Photos = props => {
       ) : (
         <div className="loader">
           <i className="fas fa-spinner fa-4x"></i>
-          <h2 className="photoInfo">Loading...</h2>
+          <h3 className="photoInfo">loading...</h3>
         </div>
       )}
     </div>
